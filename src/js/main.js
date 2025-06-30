@@ -1,6 +1,7 @@
 class Maze {
     constructor(grid) {
         this.grid = grid;
+        this.fishCounter = 0;
     }
 
     displayMaze() {
@@ -28,6 +29,19 @@ class Maze {
 
     isFree(row, col) {
         return this.grid[row][col] === 0 || this.grid[row][col] === 2;
+    }
+
+    isFishThere(row, col){
+        return this.grid[row][col] === 2
+    }
+
+    eatFish(row, col){
+        this.grid[row][col] = 0;
+        const fish = document.getElementById(`fish${row}_${col}`);
+        fish.classList.add("hidden");
+        this.fishCounter ++;
+        const fishScore = document.getElementById("result");
+        fishScore.textContent = this.fishCounter;
     }
 
 
@@ -98,18 +112,30 @@ document.addEventListener("keydown", (e) => {
     if (e.code === "ArrowLeft") {
         if (maze.isFree(penguin.row, penguin.col - 1)) {
             penguin.moveLeft();
+            if (maze.isFishThere(penguin.row, penguin.col)){
+                maze.eatFish(penguin.row, penguin.col);
+            }  
         }
     } else if (e.code === "ArrowRight") {
         if (maze.isFree(penguin.row, penguin.col + 1)) {
             penguin.moveRight();
+            if (maze.isFishThere(penguin.row, penguin.col)){
+                maze.eatFish(penguin.row, penguin.col);
+            }      
         }
     } else if (e.code === "ArrowUp") {
         if (maze.isFree(penguin.row - 1, penguin.col)) {
             penguin.moveUp();
+            if (maze.isFishThere(penguin.row, penguin.col)){
+                maze.eatFish(penguin.row, penguin.col);
+            }  
         }
     } else if (e.code === "ArrowDown") {
         if (maze.isFree(penguin.row + 1, penguin.col)) {
             penguin.moveDown();
+            if (maze.isFishThere(penguin.row, penguin.col)){
+                maze.eatFish(penguin.row, penguin.col);
+            }  
         }
     }
 })

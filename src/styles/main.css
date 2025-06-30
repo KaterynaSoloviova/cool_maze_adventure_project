@@ -17,6 +17,7 @@
 .x{
     background-color: blue;
     flex-basis: 50px;
+
 }
 
 #penguin {
@@ -29,5 +30,10 @@
     width: 35px;
     height: 35px;
     position: absolute;
+    
 }
 
+.hidden {
+    visibility: hidden;
+    max-height: 0;
+}
