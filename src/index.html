@@ -9,14 +9,27 @@
 </head>
 
 <body>
-    <div id="timeRemaining">Remaining Time: <span>00:00</span></div>
+    <header>
+        <div id="timeRemainContainer">
+            ⏳ Remaining Time: <span id="timeRemaining">00:00</span>
+        </div>
+        <div>
+            🐠 <span id="result">0</span>
+        </div>
+
+        <div id = "finalScore">"Final score"</div>
+
+    </header>
+
+
     <section id="maze">
         <img id="penguin" src="penguin.png" alt="penguin">
     </section>
 
-    <p id="result">0</p>
-    <div id = "congratsMessage">🎉 Congratulations! 🎉</div>
-    <div id = "gameOverMessage">Time’s up! You lost!</div>
+    <div id="congratsMessage">🎉 Congratulations! 🎉</div>
+    <div id="gameOverMessage">Time’s up! You lost!</div>
+    <div id="fallIceTrapMessage">Oops — you fell into an ice hole! ❄️🐧</div>
+    <div id="meetBearMessage">A polar bear caught you! 🐻💥 Game Over.</div>
 
 
 

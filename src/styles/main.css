@@ -6,16 +6,18 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     position: relative;
+    margin-top: 55px;
 }
 
 .o {
-    background-color: lightgreen;
+    background-color: #1f4f66;
     flex-basis: 25px;
 
 }
 
-.x{
-    background-color: blue;
+.x {
+    background: linear-gradient(to bottom, #7bb7cc, #5a92a9);
+    ;
     flex-basis: 25px;
 
 }
@@ -26,22 +28,76 @@
     position: absolute;
 }
 
-.fish{
-    width: 20px;
-    height: 20px;
+.fish {
+    width: 25px;
+    height: 25px;
     position: absolute;
-    
+
 }
+
+.iceTrap {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+
+}
+
+.bear {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+
+}
+
+
 
 .hidden {
     visibility: hidden;
     max-height: 0;
 }
 
-#congratsMessage{
+#congratsMessage {
     display: none;
 }
 
-#gameOverMessage{
+#gameOverMessage {
     display: none;
 }
+
+#fallIceTrapMessage{
+    display: none;
+}
+
+#meetBearMessage{
+    display: none;
+}
+
+#finalScore {
+    display: none;
+}
+
+header {
+    display: flex;
+    font-family: 'Arial', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #1f4f66;
+    gap: 8px;
+    /* space between icon and text */
+    margin-top: 50px;
+    justify-content: space-between;
+    margin-right: 50px;
+    margin-left: 10px;
+}
+
+/*body {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+  color: white;
+  position: relative;
+}*/
