@@ -16,34 +16,26 @@
         <div>
             🐠 <span id="result">0</span>
         </div>
-
-        <div id="finalScore">"Final score"</div>
-
     </header>
 
-
     <section id="maze">
-        <img id="penguin" src="assets/penguin.png" alt="penguin">
+        <img id="penguin" src="assets/images/penguin.png" alt="penguin">
     </section>
 
-    <div id="congratsMessage">🎉 Congratulations! 🎉</div>
-    <div id="gameOverMessage"> Time’s up! You lost! </div>
-    <div id="fallIceTrapMessage"> Oops — you fell into an ice hole! ❄️🐧 </div>
-    <div id="meetBearMessage">A polar bear caught you! 🐻💥 Game Over.</div>
+    <div id="messageContainer">
+        <div id="message"></div>
+        <button id="restartButton" class="hidden">Try again</button>
+    </div>
+    <div id="overlay"></div>
 
-    <audio id="iceTrapSound" src="assets/water_splash.mp3"></audio>
-    <audio id="bearSound" src="assets/bear_sound.mp3"></audio>
-    <audio id="fishEatSound" src="assets/bubble.mp3"></audio>
-    <audio id="oops" src="assets/oops_sound.mp3"></audio>
-    <audio id="yummy" src="assets/yummy.mp3"></audio>
-    <audio id="ohNo" src="assets/oh_no.mp3"></audio>
-
-
-
-
-
-
-
+    <audio id="iceTrapSound" src="assets/sounds/water_splash.mp3"></audio>
+    <audio id="bearSound" src="assets/sounds/bear_sound.mp3"></audio>
+    <audio id="fishEatSound" src="assets/sounds/bubble.mp3"></audio>
+    <audio id="oops" src="assets/sounds/oops_sound.mp3"></audio>
+    <audio id="yummy" src="assets/sounds/yummy.mp3"></audio>
+    <audio id="ohNo" src="assets/sounds/oh_no.mp3"></audio>
+    <audio id="congrat" src="assets/sounds/victory_sound.mp3"></audio>
+    <audio id="gameOver" src="assets/sounds/game_over.mp3"></audio>
 
     <script src="js/main.js"></script>
 </body>
