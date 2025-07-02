@@ -10,8 +10,9 @@
 }
 
 .o {
-    background-color: #1f4f66;
+    /* background-color: #1f4f66; */
     flex-basis: 25px;
+    background-color: #DDDCD6;
 
 }
 
@@ -50,7 +51,6 @@
 }
 
 
-
 .hidden {
     visibility: hidden;
     max-height: 0;
@@ -64,11 +64,11 @@
     display: none;
 }
 
-#fallIceTrapMessage{
+#fallIceTrapMessage {
     display: none;
 }
 
-#meetBearMessage{
+#meetBearMessage {
     display: none;
 }
 
@@ -90,14 +90,3 @@ header {
     margin-left: 10px;
 }
 
-/*body {
-  margin: 0;
-  padding: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  font-family: Arial, sans-serif;
-  color: white;
-  position: relative;
-}*/

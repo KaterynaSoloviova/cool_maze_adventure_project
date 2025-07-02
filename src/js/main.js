@@ -51,7 +51,7 @@ class Maze {
     }
 
     isFree(row, col) {
-        return this.grid[row][col] === 0 || this.grid[row][col] === 2 || this.grid[row][col] === 3 || this.grid[row][col] === 4 || this.grid[row][col] === 5 ;
+        return this.grid[row][col] === 0 || this.grid[row][col] === 2 || this.grid[row][col] === 3 || this.grid[row][col] === 4 || this.grid[row][col] === 5;
     }
 
     isFishThere(row, col) {
@@ -65,6 +65,14 @@ class Maze {
         this.fishCounter++;
         const fishScore = document.getElementById("result");
         fishScore.textContent = this.fishCounter;
+
+        const eatFishSound = document.getElementById("fishEatSound");
+        eatFishSound.currentTime = 0;
+        eatFishSound.play();
+
+        const yummy = document.getElementById("yummy");
+        yummy.currentTime = 0;
+        yummy.play();
     }
 
     fallIceTrap(row, col) {
@@ -100,16 +108,34 @@ class Maze {
         if (this.isFishThere(row, col)) {
             this.eatFish(row, col);
         }
-        if(this.grid[row][col] === 4){
+        if (this.grid[row][col] === 4) {
             const iceTrap = document.getElementById(`iceTrap${row}_${col}`);
             iceTrap.classList.remove("hidden");
             document.getElementById("fallIceTrapMessage").style.display = "block";
+
+            const iceSound = document.getElementById("iceTrapSound");
+            iceSound.currentTime = 0;
+            iceSound.play();
+
+            const oops = document.getElementById("oops");
+            oops.currentTime = 0;
+            oops.play();
+
             this.penguin.move(this.startX, this.startY);
         }
-        if(this.grid[row][col] === 5){
+        if (this.grid[row][col] === 5) {
             const bear = document.getElementById(`bear${row}_${col}`);
             bear.classList.remove("hidden");
             document.getElementById("meetBearMessage").style.display = "block";
+
+            const bearSound = document.getElementById("bearSound");
+            bearSound.currentTime = 0;
+            bearSound.play();
+
+            const ohNo = document.getElementById("ohNo");
+            ohNo.currentTime = 0;
+            ohNo.play();
+
             this.penguin.move(this.startX, this.startY);
             clearInterval(timer);
         }
@@ -135,7 +161,7 @@ class Penguin {
         penguinElm.style.bottom = positionY + "px";
     }
 
-    move(row, col){
+    move(row, col) {
         this.row = row;
         this.col = col;
         this.updatedUI();
@@ -170,9 +196,9 @@ const maze = new Maze([
     [1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1],
     [1, 0, 1, 2, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 2, 1, 0, 0, 0, 1, 0, 1, 2, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 2, 0, 0, 1, 0, 1, 0, 1],
     [1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1],
-    [1, 0, 4, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1],
+    [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1],
     [1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1],
-    [1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1],
+    [1, 0, 4, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1],
     [1, 5, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1],
     [1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1],
     [1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 2, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1],
