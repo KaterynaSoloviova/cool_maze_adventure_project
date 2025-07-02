@@ -18,7 +18,7 @@ class Maze {
                     if (element === 2) {
                         const fish = document.createElement("img");
                         fish.setAttribute("class", "fish");
-                        fish.setAttribute("src", "fish.png");
+                        fish.setAttribute("src", "assets/fish.png");
                         fish.setAttribute("alt", "fish");
                         fish.setAttribute("id", `fish${i}_${j}`);
                         divelement.appendChild(fish)
@@ -27,7 +27,7 @@ class Maze {
                     } else if (element === 4) {
                         const iceTrap = document.createElement("img");
                         iceTrap.setAttribute("class", "iceTrap");
-                        iceTrap.setAttribute("src", "ice_trap.png");
+                        iceTrap.setAttribute("src", "assets/ice_trap.png");
                         iceTrap.setAttribute("alt", "ice hole");
                         iceTrap.setAttribute("id", `iceTrap${i}_${j}`);
                         iceTrap.classList.add("hidden")
@@ -35,7 +35,7 @@ class Maze {
                     } else if (element === 5) {
                         const bear = document.createElement("img");
                         bear.setAttribute("class", "bear");
-                        bear.setAttribute("src", "bear.png");
+                        bear.setAttribute("src", "assets/bear.png");
                         bear.setAttribute("alt", "bear");
                         bear.setAttribute("id", `bear${i}_${j}`);
                         bear.classList.add("hidden")
