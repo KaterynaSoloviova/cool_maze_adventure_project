@@ -44,7 +44,7 @@
 }
 
 .hidden {
-    visibility: hidden;
+    visibility: hidden; 
     max-height: 0;
 }
 
@@ -112,7 +112,7 @@ header {
 }
 
 
-#restartButton {
+.btn {
     background-color: #ba23bd;
     border: none;
     color: white;
@@ -121,7 +121,7 @@ header {
     border-radius: 12px;
 }
 
-#restartButton.pressed {
+.btn.pressed {
     transform: translateY(2px);
     box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.4);
     transition: transform 0.1s ease;
