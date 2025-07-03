@@ -4,19 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>🐧 Penguin Maze Adventure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css" />
 </head>
 
 <body>
     <div id="gameTitle">Penguin Maze Adventure</div>
+    <div id="gameTask">Collect the fish and find the exit!</div>
     <header>
         <div id="timeRemainContainer">
-            ⏳ Remaining Time: <span id="timeRemaining">00:00</span>
+            ⏳ Remaining Time: <span id="time_info">00:00</span>
         </div>
-        <div>🏆 Level: <span id="levelInfo">1</span></div>
+        <div>🏆 Level: <span id="level_info">1</span></div>
         <div>
-            🐠 <span id="result">0</span>
+            🐠 Points: <span id="point_info">0</span>
         </div>
     </header>
 
@@ -24,10 +26,10 @@
         <img id="penguin" src="assets/images/penguin.png" alt="penguin">
     </section>
 
-    <div id="messageContainer">
+    <div id="messageContainer" class="hidden">
         <div id="message"></div>
-        <button id="restartButton" class="btn hidden">Try again</button>
-        <button id="nextLevelBtn" class="btn hidden">Next Level</button>
+        <button id="restartButton" class="btn">Try again</button>
+        <button id="nextLevelBtn" class="btn">Next Level</button>
     </div>
     <div id="overlay"></div>
 
@@ -39,8 +41,9 @@
     <audio id="ohNo" src="assets/sounds/oh_no.mp3"></audio>
     <audio id="congrat" src="assets/sounds/victory_sound.mp3"></audio>
     <audio id="gameOver" src="assets/sounds/game_over.mp3"></audio>
-    <audio id="bgSound" volume = "0.2" src="assets/sounds/bg_sound.mp3"></audio>
+    <audio id="bgSound" volume="0.2" src="assets/sounds/bg_sound.mp3"></audio>
 
+    <script src="js/maze_data.js"></script>
     <script src="js/main.js"></script>
 </body>
 
