@@ -19,8 +19,8 @@ The game features several levels, a timer, sound effects, and a nostalgic arcade
 
 ## 📸 Screenshots
 
-![Screenshot 1](./screenshots/Screenshot 1.png)  
-![Screenshot 2](./screenshots/Screenshot 2.png)
+![Screenshot 1](./screenshots/Screenshot1.png)  
+![Screenshot 2](./screenshots/Screenshot2.png)
 
 ## 🚀 Demo
 
